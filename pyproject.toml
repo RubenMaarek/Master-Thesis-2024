@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "master-thesis"
+version = "0.1.0"
+description = "All libs used for this master thesis"
+authors = ["Ruben Maarek"]
+readme = "README.md"
+packages = [{include = "master_thesis"}]
+
+[tool.poetry.dependencies]
+python = "^3.12.4"
+numpy = "*"
+pandas = "*"
+streamlit = "*"
+typer = "*"
+dvc = "*"
+qiskit = "*"
+pytest = "*"
+seaborn = "*"
+scipy = "*"
+qiskit-aer = "*"
+mpl-tools = "*"
+ruff = "*"
+dvc-gdrive = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

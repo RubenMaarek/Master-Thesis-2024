@@ -1,0 +1,13 @@
+#!/bin/bash
+#PBS -q openmp
+#PBS -j oe
+#PBS -N pipeline_job
+
+# Activate the conda environment
+source /home/svu/e1124919/miniconda3/bin/activate myenv
+
+# Ensure correct working directory
+cd /home/svu/e1124919/Desktop/variational-martingale-solver/Pipeline/dvc
+
+# Run the pipeline script with the given parameters
+python run_pipeline.py --n-qubits $n_qubits --iteration $iteration --depth $depth

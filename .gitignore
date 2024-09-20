@@ -1,0 +1,35 @@
+# Python
+*.pyc
+__pycache__/
+
+# Virtual Environments
+venv/
+env/
+.venv/
+ENV/
+env-bak/
+env_tmp/
+
+# Compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Packaging artifacts
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib64/
+
+#IDE 
+.vscode/
+
+# Internal
+model/
+Old/

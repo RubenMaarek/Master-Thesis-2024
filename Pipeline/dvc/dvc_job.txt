@@ -1,0 +1,17 @@
+#!/bin/bash
+#PBS -N dvc_pipeline_job           # Job name
+#PBS -l nodes=1:ppn=8              # Number of nodes and processors per node
+#PBS -l walltime=02:00:00          # Walltime (hh:mm:ss)
+#PBS -q parallel8                  # Queue name
+
+# Load necessary modules
+module load python3.7              # Load Python 3.7
+
+# Activate your virtual environment
+source ~/venv_qthesis/bin/activate
+
+# Change to the project directory
+cd /home/e1124919/VARIATIONAL-MARTINGALE-SOLVER
+
+# Run the DVC pipeline
+dvc repro

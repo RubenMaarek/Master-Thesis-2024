@@ -1,0 +1,3636 @@
+variational-martingale-solver
+├── .DS_Store
+├── .dvc
+│   ├── .gitignore
+│   ├── config
+│   └── tmp
+│       ├── btime
+│       ├── lock
+│       ├── rwlock
+│       └── rwlock.lock
+├── .dvcignore
+├── .gitignore
+├── .python-version
+├── July_Notebook.ipynb
+├── Old
+│   ├── .DS_Store
+│   ├── olds
+│   │   ├── HadamardAndOverlapCircuits.py
+│   │   ├── PayoffMatrixGeneration.py
+│   │   ├── RescaleAndDecompose.py
+│   │   ├── UntilPyWorks.ipynb
+│   │   ├── hadamard_tests.py
+│   │   ├── lp_solving.py
+│   │   ├── main.py
+│   │   ├── model.py
+│   │   ├── model_wo_pi.py
+│   │   └── precision_estimation.py
+│   └── pipeline_scripts
+│       ├── classical_solutions.py
+│       ├── generate_model.py
+│       ├── old_3_compare_derivative_prices.py
+│       ├── old_run_pipeline.py
+│       ├── result_analysis.py
+│       ├── run_master.sh
+│       ├── run_multiple.sh
+│       ├── run_once.sh
+│       ├── streamlit_pages
+│       ├── submit_master_job.pbs
+│       ├── submit_to_hpc.pbs
+│       └── vqe_script.py
+├── Pipeline
+│   ├── .DS_Store
+│   ├── dvc
+│   │   ├── chmod_all.sh
+│   │   ├── dvc_job.txt
+│   │   ├── params.yaml
+│   │   ├── pipeline_state.lock
+│   │   ├── run_pipeline.pbs
+│   │   └── run_pipeline.py
+│   └── pipeline_scripts
+│       ├── 1_generate_model.py
+│       ├── 2_vqe_script.py
+│       ├── 3_compare_derivative_prices.py
+│       └── 4_vqe_script_for_lp_funcs.py
+├── hpc_requirements.txt
+├── lib
+│   ├── .DS_Store
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-311.pyc
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── alg.cpython-312.pyc
+│   │   ├── config.cpython-312.pyc
+│   │   ├── new_model.cpython-311.pyc
+│   │   ├── new_model.cpython-312.pyc
+│   │   ├── options_functions.cpython-312.pyc
+│   │   ├── utils.cpython-311.pyc
+│   │   ├── utils.cpython-312.pyc
+│   │   └── vqe.cpython-312.pyc
+│   ├── alg.py
+│   ├── config.py
+│   ├── new_model.py
+│   ├── options_functions.py
+│   ├── utils.py
+│   └── vqe.py
+├── model
+│   ├── .DS_Store
+│   ├── test_2024_08_31
+│   │   ├── .DS_Store
+│   │   ├── run_qubits_10_depth_1_iteration_1_2024-08-31_04-48-50
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_10_depth_1_iteration_2_2024-08-31_04-59-35
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_10_depth_1_iteration_3_2024-08-31_06-58-43
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_10_depth_1_iteration_4_2024-08-31_04-53-50
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_10_depth_1_iteration_5_2024-08-31_07-27-16
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_4_depth_1_iteration_1_2024-08-30_23-19-53
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_4_depth_1_iteration_2_2024-08-30_23-38-36
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_4_depth_1_iteration_3_2024-08-30_23-09-34
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_4_depth_1_iteration_4_2024-08-30_23-28-06
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_4_depth_1_iteration_5_2024-08-30_23-24-06
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_5_depth_1_iteration_1_2024-08-30_23-32-54
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_5_depth_1_iteration_2_2024-08-30_23-14-44
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_5_depth_1_iteration_3_2024-08-31_00-11-46
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_5_depth_1_iteration_4_2024-08-30_23-43-50
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_5_depth_1_iteration_5_2024-08-31_01-27-38
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_6_depth_1_iteration_1_2024-08-31_00-18-47
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_6_depth_1_iteration_2_2024-08-30_23-53-33
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_6_depth_1_iteration_3_2024-08-31_00-02-35
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_6_depth_1_iteration_4_2024-08-31_00-39-13
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_6_depth_1_iteration_5_2024-08-31_01-18-29
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_7_depth_1_iteration_1_2024-08-31_00-48-45
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_7_depth_1_iteration_2_2024-08-31_00-27-30
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_7_depth_1_iteration_3_2024-08-31_01-03-17
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_7_depth_1_iteration_4_2024-08-31_01-34-53
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_7_depth_1_iteration_5_2024-08-31_01-48-17
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_8_depth_1_iteration_1_2024-08-31_02-47-18
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_8_depth_1_iteration_2_2024-08-31_02-27-41
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_8_depth_1_iteration_3_2024-08-31_04-25-22
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_8_depth_1_iteration_4_2024-08-31_03-05-50
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_8_depth_1_iteration_5_2024-08-31_02-01-09
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_9_depth_1_iteration_1_2024-08-31_03-05-57
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_9_depth_1_iteration_2_2024-08-31_04-18-01
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_9_depth_1_iteration_3_2024-08-31_03-47-25
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_9_depth_1_iteration_4_2024-08-31_03-32-35
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   └── run_qubits_9_depth_1_iteration_5_2024-08-31_06-41-59
+│   │       ├── D_matrix.csv
+│   │       ├── MC_option_prices.csv
+│   │       ├── Pi_vector.csv
+│   │       ├── S_matrix.csv
+│   │       ├── all_option_prices.csv
+│   │       ├── ansatz.qpy
+│   │       ├── final_statevectors.csv
+│   │       ├── final_statevectors_lp.csv
+│   │       ├── final_thetas.csv
+│   │       ├── final_thetas_lp.csv
+│   │       ├── model_config.json
+│   │       ├── mus_drifts.csv
+│   │       ├── optimization_methods.json
+│   │       ├── optimization_methods_lp.json
+│   │       ├── optimization_times.json
+│   │       ├── optimization_times_lp.json
+│   │       ├── qp_solution_vector.csv
+│   │       ├── run_pipeline.log
+│   │       ├── shots_used.json
+│   │       ├── shots_used_lp.json
+│   │       ├── sigmas_volatilities.csv
+│   │       ├── strike_prices.csv
+│   │       ├── vqe_lp_output.json
+│   │       └── vqe_output.json
+│   ├── test_2024_09_06
+│   │   ├── run_qubits_10_depth_1_iteration_1_2024-09-07_03-32-24
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_10_depth_1_iteration_2_2024-09-07_04-25-40
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_10_depth_1_iteration_3_2024-09-07_01-40-49
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_10_depth_1_iteration_4_2024-09-07_06-04-17
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_10_depth_1_iteration_5_2024-09-07_05-34-33
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_4_depth_1_iteration_1_2024-09-06_17-51-31
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_4_depth_1_iteration_1_2024-09-06_19-11-50
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_4_depth_1_iteration_2_2024-09-06_21-14-20
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_4_depth_1_iteration_3_2024-09-06_19-59-44
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_4_depth_1_iteration_4_2024-09-06_19-24-32
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_4_depth_1_iteration_5_2024-09-06_19-55-23
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_5_depth_1_iteration_1_2024-09-06_17-58-13
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_5_depth_1_iteration_2_2024-09-06_20-25-56
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_5_depth_1_iteration_3_2024-09-06_18-48-18
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_5_depth_1_iteration_4_2024-09-06_19-14-37
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_5_depth_1_iteration_5_2024-09-06_19-19-55
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_6_depth_1_iteration_1_2024-09-06_18-06-08
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_6_depth_1_iteration_2_2024-09-06_19-45-45
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_6_depth_1_iteration_3_2024-09-06_19-03-15
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_6_depth_1_iteration_4_2024-09-06_21-05-29
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_6_depth_1_iteration_5_2024-09-06_18-54-36
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_7_depth_1_iteration_1_2024-09-06_18-18-59
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_7_depth_1_iteration_2_2024-09-06_19-30-06
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_7_depth_1_iteration_3_2024-09-06_18-34-19
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_7_depth_1_iteration_4_2024-09-06_20-31-29
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_7_depth_1_iteration_5_2024-09-06_21-18-11
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_8_depth_1_iteration_1_2024-09-06_20-03-11
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_8_depth_1_iteration_2_2024-09-06_21-54-38
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_8_depth_1_iteration_3_2024-09-06_20-43-47
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_8_depth_1_iteration_4_2024-09-06_21-33-07
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_8_depth_1_iteration_5_2024-09-06_23-02-29
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_9_depth_1_iteration_1_2024-09-06_23-18-05
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_9_depth_1_iteration_2_2024-09-07_00-50-13
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_9_depth_1_iteration_3_2024-09-06_22-15-35
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   ├── run_qubits_9_depth_1_iteration_4_2024-09-07_03-41-21
+│   │   │   ├── D_matrix.csv
+│   │   │   ├── MC_option_prices.csv
+│   │   │   ├── Pi_vector.csv
+│   │   │   ├── S_matrix.csv
+│   │   │   ├── all_option_prices.csv
+│   │   │   ├── ansatz.qpy
+│   │   │   ├── final_statevectors.csv
+│   │   │   ├── final_statevectors_lp.csv
+│   │   │   ├── final_thetas.csv
+│   │   │   ├── final_thetas_lp.csv
+│   │   │   ├── model_config.json
+│   │   │   ├── mus_drifts.csv
+│   │   │   ├── optimization_methods.json
+│   │   │   ├── optimization_methods_lp.json
+│   │   │   ├── optimization_times.json
+│   │   │   ├── optimization_times_lp.json
+│   │   │   ├── qp_solution_vector.csv
+│   │   │   ├── run_pipeline.log
+│   │   │   ├── shots_used.json
+│   │   │   ├── shots_used_lp.json
+│   │   │   ├── sigmas_volatilities.csv
+│   │   │   ├── strike_prices.csv
+│   │   │   ├── vqe_lp_output.json
+│   │   │   └── vqe_output.json
+│   │   └── run_qubits_9_depth_1_iteration_5_2024-09-06_23-59-33
+│   │       ├── D_matrix.csv
+│   │       ├── MC_option_prices.csv
+│   │       ├── Pi_vector.csv
+│   │       ├── S_matrix.csv
+│   │       ├── all_option_prices.csv
+│   │       ├── ansatz.qpy
+│   │       ├── final_statevectors.csv
+│   │       ├── final_statevectors_lp.csv
+│   │       ├── final_thetas.csv
+│   │       ├── final_thetas_lp.csv
+│   │       ├── model_config.json
+│   │       ├── mus_drifts.csv
+│   │       ├── optimization_methods.json
+│   │       ├── optimization_methods_lp.json
+│   │       ├── optimization_times.json
+│   │       ├── optimization_times_lp.json
+│   │       ├── qp_solution_vector.csv
+│   │       ├── run_pipeline.log
+│   │       ├── shots_used.json
+│   │       ├── shots_used_lp.json
+│   │       ├── sigmas_volatilities.csv
+│   │       ├── strike_prices.csv
+│   │       ├── vqe_lp_output.json
+│   │       └── vqe_output.json
+│   └── test_2024_09_08
+│       ├── .DS_Store
+│       ├── run_qubits_10_depth_1_iteration_1_2024-09-08_03-19-03
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_10_depth_1_iteration_2_2024-09-08_04-21-04
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_10_depth_1_iteration_3_2024-09-08_04-37-52
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_10_depth_1_iteration_4_2024-09-08_02-34-38
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_10_depth_1_iteration_5_2024-09-08_04-35-33
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_10_depth_2_iteration_1_2024-09-09_07-52-03
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_10_depth_2_iteration_2_2024-09-09_07-29-15
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_10_depth_2_iteration_3_2024-09-09_08-18-39
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_10_depth_2_iteration_4_2024-09-09_09-31-12
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_10_depth_2_iteration_5_2024-09-09_09-53-57
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_4_depth_1_iteration_1_2024-09-07_23-26-00
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_4_depth_1_iteration_2_2024-09-07_23-17-24
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_4_depth_1_iteration_3_2024-09-07_23-13-03
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_4_depth_1_iteration_4_2024-09-07_23-08-17
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_4_depth_1_iteration_5_2024-09-07_23-22-07
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_4_depth_2_iteration_1_2024-09-08_22-18-04
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_4_depth_2_iteration_2_2024-09-09_01-05-08
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_4_depth_2_iteration_3_2024-09-08_22-04-25
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_4_depth_2_iteration_4_2024-09-08_22-23-44
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_4_depth_2_iteration_5_2024-09-08_22-38-04
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_5_depth_1_iteration_1_2024-09-07_23-20-59
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_5_depth_1_iteration_2_2024-09-07_23-17-27
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_5_depth_1_iteration_3_2024-09-07_23-30-32
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_5_depth_1_iteration_4_2024-09-07_23-26-43
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_5_depth_1_iteration_5_2024-09-07_23-45-28
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_5_depth_2_iteration_1_2024-09-09_01-39-30
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_5_depth_2_iteration_2_2024-09-09_01-21-34
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_5_depth_2_iteration_3_2024-09-09_01-32-01
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_5_depth_2_iteration_4_2024-09-09_01-11-27
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_5_depth_2_iteration_5_2024-09-08_22-11-03
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_6_depth_1_iteration_1_2024-09-07_23-08-17
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_6_depth_1_iteration_2_2024-09-07_23-36-26
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_6_depth_1_iteration_3_2024-09-07_23-33-25
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_6_depth_1_iteration_4_2024-09-07_23-40-37
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_6_depth_1_iteration_5_2024-09-07_23-50-14
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_6_depth_2_iteration_1_2024-09-08_22-27-57
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_6_depth_2_iteration_2_2024-09-09_01-47-21
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_6_depth_2_iteration_3_2024-09-08_22-43-51
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_6_depth_2_iteration_4_2024-09-09_02-00-34
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_6_depth_2_iteration_5_2024-09-09_00-55-25
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_7_depth_1_iteration_1_2024-09-07_23-51-31
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_7_depth_1_iteration_2_2024-09-08_00-06-00
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_7_depth_1_iteration_3_2024-09-08_00-00-42
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_7_depth_1_iteration_4_2024-09-08_00-12-49
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_7_depth_1_iteration_5_2024-09-08_00-20-22
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_7_depth_2_iteration_1_2024-09-09_02-53-50
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_7_depth_2_iteration_2_2024-09-09_02-12-32
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_7_depth_2_iteration_3_2024-09-09_03-34-10
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_7_depth_2_iteration_4_2024-09-09_02-31-14
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_7_depth_2_iteration_5_2024-09-09_03-11-11
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_8_depth_1_iteration_1_2024-09-08_00-50-49
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_8_depth_1_iteration_2_2024-09-08_01-13-01
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_8_depth_1_iteration_3_2024-09-08_00-32-37
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_8_depth_1_iteration_4_2024-09-08_00-25-53
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_8_depth_1_iteration_5_2024-09-08_01-35-22
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_8_depth_2_iteration_1_2024-09-09_04-28-07
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_8_depth_2_iteration_2_2024-09-09_04-59-48
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_8_depth_2_iteration_3_2024-09-09_05-32-24
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_8_depth_2_iteration_4_2024-09-09_03-49-48
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_8_depth_2_iteration_5_2024-09-09_05-04-31
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_9_depth_1_iteration_1_2024-09-08_01-53-41
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_9_depth_1_iteration_2_2024-09-08_00-52-02
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_9_depth_1_iteration_3_2024-09-08_02-14-49
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_9_depth_1_iteration_4_2024-09-08_01-37-58
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_9_depth_1_iteration_5_2024-09-08_03-57-27
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_9_depth_2_iteration_1_2024-09-09_06-00-05
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_9_depth_2_iteration_2_2024-09-09_05-35-04
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_9_depth_2_iteration_3_2024-09-09_06-37-32
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       ├── run_qubits_9_depth_2_iteration_4_2024-09-09_07-01-25
+│       │   ├── D_matrix.csv
+│       │   ├── MC_option_prices.csv
+│       │   ├── Pi_vector.csv
+│       │   ├── S_matrix.csv
+│       │   ├── all_option_prices.csv
+│       │   ├── ansatz.qpy
+│       │   ├── final_statevectors.csv
+│       │   ├── final_statevectors_lp.csv
+│       │   ├── final_thetas.csv
+│       │   ├── final_thetas_lp.csv
+│       │   ├── model_config.json
+│       │   ├── mus_drifts.csv
+│       │   ├── optimization_methods.json
+│       │   ├── optimization_methods_lp.json
+│       │   ├── optimization_times.json
+│       │   ├── optimization_times_lp.json
+│       │   ├── qp_solution_vector.csv
+│       │   ├── run_pipeline.log
+│       │   ├── shots_used.json
+│       │   ├── shots_used_lp.json
+│       │   ├── sigmas_volatilities.csv
+│       │   ├── strike_prices.csv
+│       │   ├── vqe_lp_output.json
+│       │   └── vqe_output.json
+│       └── run_qubits_9_depth_2_iteration_5_2024-09-09_07-22-22
+│           ├── D_matrix.csv
+│           ├── MC_option_prices.csv
+│           ├── Pi_vector.csv
+│           ├── S_matrix.csv
+│           ├── all_option_prices.csv
+│           ├── ansatz.qpy
+│           ├── final_statevectors.csv
+│           ├── final_statevectors_lp.csv
+│           ├── final_thetas.csv
+│           ├── final_thetas_lp.csv
+│           ├── model_config.json
+│           ├── mus_drifts.csv
+│           ├── optimization_methods.json
+│           ├── optimization_methods_lp.json
+│           ├── optimization_times.json
+│           ├── optimization_times_lp.json
+│           ├── qp_solution_vector.csv
+│           ├── run_pipeline.log
+│           ├── shots_used.json
+│           ├── shots_used_lp.json
+│           ├── sigmas_volatilities.csv
+│           ├── strike_prices.csv
+│           ├── vqe_lp_output.json
+│           └── vqe_output.json
+├── pyproject.toml
+├── result_app
+│   ├── .DS_Store
+│   ├── _pages
+│   │   ├── .DS_Store
+│   │   ├── __pycache__
+│   │   │   ├── page1.cpython-312.pyc
+│   │   │   ├── page2.cpython-312.pyc
+│   │   │   ├── page3.cpython-312.pyc
+│   │   │   ├── page4.cpython-312.pyc
+│   │   │   ├── page5.cpython-312.pyc
+│   │   │   ├── page6.cpython-312.pyc
+│   │   │   ├── page7.cpython-312.pyc
+│   │   │   └── page8.cpython-312.pyc
+│   │   ├── page1.py
+│   │   ├── page2.py
+│   │   ├── page3.py
+│   │   ├── page4.py
+│   │   ├── page5.py
+│   │   ├── page6.py
+│   │   ├── page7.py
+│   │   └── page8.py
+│   ├── config.toml
+│   └── main.py
+├── sync_to_hpc.sh
+└── test
+    ├── test_alg.py
+    ├── test_model.py
+    └── test_utils.py
