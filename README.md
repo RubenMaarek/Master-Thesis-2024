@@ -12,6 +12,20 @@ This repository contains the code for my Master Thesis on **Variational Quantum 
 ## How to Run
 
 1. **Set Up the Pipeline**:  
-   In `run_pipeline.py`, specify your `base_model_dir`. The `params.yaml` file defines the number of iterations and qubit values for the runs. To start the pipeline, run:
-   ```bash
-   python run_pipeline.py --n-qubits $n_qubits --iteration $iteration --depth $depth
+    In `run_pipeline.py`, specify your `base_model_dir`. The `params.yaml` file defines the number of iterations and qubit values for the runs. To start the pipeline, run:
+    ```bash
+    python run_pipeline.py --n-qubits $n_qubits --iteration $iteration --depth $depth
+
+2. **Update the Visualization Paths**:
+    In the `result_app/pages` folder, update the model paths to point to the newly created directories from the pipeline.
+3. **Launch Visualization**:
+    Start the Streamlit app by running: 
+    ```bash
+    streamlit run result_app/main.py
+
+Navigate to the provided local URL to visualize the results from the pipeline.
+
+
+
+
+
